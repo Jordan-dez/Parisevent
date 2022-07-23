@@ -1,0 +1,7 @@
+.splitbar{
+width: 100% !important;
+height: 2rem !important;
+border-radius: 2rem;
+background-color: #5A5B5D !important;
+margin: 2rem 0;
+}

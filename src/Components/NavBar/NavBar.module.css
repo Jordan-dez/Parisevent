@@ -1,0 +1,9 @@
+.bgnav{
+    background-color: #D5D5D5 !important;
+}
+.logo{
+    display: block;
+    width: 10rem;
+    height: 4rem;
+    margin: 0 auto !important;
+}
