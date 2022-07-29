@@ -1,5 +1,5 @@
 import React from 'react'
-import Caroussel from '../Caroussel/Caroussel'
+
 import NavBar from '../NavBar/NavBar'
 
 const Hearder = () => {
@@ -9,7 +9,6 @@ const Hearder = () => {
             <img src="assets/images/logo.svg" alt="logo paris event" />
         </div> */}
         <NavBar/>
-        <Caroussel/>
     </header>
   )
 }

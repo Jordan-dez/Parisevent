@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import AboutUS from '../../Components/AboutUs/AboutUS'
 import EventCard from '../../Components/EventCard/EventCard'
-import Hearder from '../../Components/Header/Hearder'
-
+import Caroussel from '../../Components/Caroussel/Caroussel'
 const Home = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -25,10 +24,10 @@ const Home = () => {
     console.log("lastevent", lastEvent);
     return (
         <>
-            <Hearder />
-            <main className='container'>
+            <Caroussel/>
+            <section className='container'>
                 <AboutUS />
-                <section>
+                <>
                     <h2 className='text-uppercase'>Dernier évènement publié</h2>
                     <div className="d-flex">
                         {
@@ -43,8 +42,8 @@ const Home = () => {
                         }
                         
                     </div>
-                </section>
-            </main>
+                </>
+            </section>
         </>
     )
 }

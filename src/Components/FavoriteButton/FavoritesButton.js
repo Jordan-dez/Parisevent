@@ -2,9 +2,13 @@ import { useState, useEffect } from "react";
 
 
 const FavoritesButton = ({data}) => {
-    console.log("favoris",data);
+
+    console.log("favoritesButton", data);
+
     const [save, setSave] = useState(false);
+
     useEffect(() => {
+
         if (localStorage.getItem("EventFavorite")) {
             const saveEvent = JSON.parse(localStorage.getItem("EventFavorite"));
             if (saveEvent.length !== 0) {
@@ -26,11 +30,18 @@ const FavoritesButton = ({data}) => {
         console.log("data added",data);
         //pusher un event dans le local storage
         if (localStorage.getItem("EventFavorite")) {
+          /**
+           * si la cle EventFavorite existe dejà au niveau du localstorage onfait une copie dans la constante
+           *  saveEvent puis on push la nouvelle data passée en props avant l'ajouter de nouveau au localstorage
+           * pour evité de perdre les events existants dans le localstorage
+           * SINON on crée EventFavorite  en lui passant la data dans un tableau stringuifier dans le 
+           * localstorage
+           */
             const saveEvent = JSON.parse(localStorage.getItem("EventFavorite"));
             saveEvent.push(data);
             localStorage.setItem("EventFavorite", JSON.stringify(saveEvent));
         } else {
-            localStorage.setItem("EventFavorite", JSON.stringify[data]);
+            localStorage.setItem("EventFavorite", JSON.stringify([data]));
         }
         setSave(true);
     };
@@ -41,6 +52,12 @@ const FavoritesButton = ({data}) => {
      * 
      */
     const handleDeleteFavoriteEvent = (data) => {
+      console.log("data deleteEvent",data);
+        /**
+         * on récupere dans saveEvent tous les events existant dans  EventFavorite 
+         * sur saveEvent on applique la methode filter pour retourner les events dont les id ne correspondent
+         * pas à l'id de l'event passé en parametre.ces derniers sont ensuite ajouter de nouveau au local storage
+         */
         const saveEvent = JSON.parse(localStorage.getItem("EventFavorite"));
         const deleteEvent = saveEvent.filter((value) => value.id !== data.id);
         localStorage.setItem("EventFavorite", JSON.stringify(deleteEvent));

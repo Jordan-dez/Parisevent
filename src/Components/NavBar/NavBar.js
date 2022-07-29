@@ -13,7 +13,7 @@ function NavBar() {
       <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="m-auto ">
+          <Nav className="m-auto">
             <Nav.Link href="/" className='fw-bold'>Accueil</Nav.Link>
             <Nav.Link href="/recherche" className='text-dark'>Rechercher</Nav.Link>
             <Nav.Link href="/favoris" className='text-dark'>Favoris</Nav.Link>

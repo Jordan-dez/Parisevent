@@ -21,8 +21,8 @@ export const RemoveTag = (str, length) => {
 export const formatDate = (eventDate, placecalled) => {
 
     if (placecalled === "CARD_EVENT") {
-        if(eventDate===null || eventDate === undefined)return;
-        const [month, day, year] = moment(eventDate.split('T')[0]).format("MMM Do YY").split(' ');
+        if(eventDate===null || eventDate === undefined){return [];}
+        const [month, day, year] = moment(eventDate).format("MMM Do YY").split(' ');
         return [day, month, year]
 
     }
